@@ -15,7 +15,9 @@ defmodule PickingAndDelivery.Application do
       # Start the PubSub system
       {Phoenix.PubSub, name: PickingAndDelivery.PubSub},
       # Start the Endpoint (http/https)
-      PickingAndDeliveryWeb.Endpoint
+      PickingAndDeliveryWeb.Endpoint,
+      {Mongo, Application.get_env(:picking_and_delivery, :mongo_config)}
+
       # Start a worker by calling: PickingAndDelivery.Worker.start_link(arg)
       # {PickingAndDelivery.Worker, arg}
     ]
