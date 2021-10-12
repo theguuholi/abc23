@@ -7,7 +7,7 @@ defmodule PickingAndDeliveryWeb.ProductsComponent do
   end
 
   def handle_event("deliver", %{"id" => id}, socket) do
-    IO.inspect id
-    {:noreply, socket}
+    products = Pickings.update_picking(id, socket.assigns.products)
+    {:noreply, update(socket, :products, fn _ -> products end)}
   end
 end
