@@ -2,7 +2,7 @@
 @import "./phoenix.css";
 
 #map{
-  height: 600px;
+  height: 400px;
   width: 100%;
   border: 1px solid #31708f;
 }

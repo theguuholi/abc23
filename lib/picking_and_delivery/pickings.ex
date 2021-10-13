@@ -3,10 +3,7 @@ defmodule PickingAndDelivery.Pickings do
   alias PickingAndDelivery.Pickings.Core.UpdatePicking
 
   def all_stores_with_pickings do
-    stores = GetAllStoresWithPickings.all
-
-    stores |> hd |> IO.inspect()
-    stores
+    GetAllStoresWithPickings.all
   end
 
   def update_picking(id, products) do

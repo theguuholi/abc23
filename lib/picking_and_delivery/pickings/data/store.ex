@@ -1,4 +1,5 @@
 defmodule PickingAndDelivery.Pickings.Data.Store do
+  @derive {Jason.Encoder, only: ~w/description id lat lng name products total_products/a}
   defstruct ~w/description id lat lng name products total_products/a
   alias PickingAndDelivery.Pickings.Data.Product
 
