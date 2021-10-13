@@ -1,0 +1,13 @@
+<ul id="list-stores">
+    <%= for store <- @stores do %>
+    <li id={"store-" <> store.id}>
+        <a href="#">
+            <%= store.name %> - <%= store.description %>
+        </a>
+    </li>
+    <% end %>
+</ul>
+
+<div id="pickings-in-the-map">
+    <div id="map" phx-hook="PickingsMap"></div>
+</div>
