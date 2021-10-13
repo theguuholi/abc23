@@ -1,20 +1,5 @@
 <ul>
     <%= for product <- @products do %>
-    <li id={"product-" <> product.id}>
-        <p><%= product.name %></p>
-        <strong>Entregue?: </strong>
-        <button id={"update-product-"<> product.id}
-                disabled={product.delivered}
-                phx-click="deliver"
-                phx-target={@myself}
-                phx-value-id={product.id}
-        >
-            <%= if product.delivered do %>
-            Entregue
-            <% else %>
-            Entregar
-            <% end %>
-        </button>
-    </li>
+        <.product product={product} target={@myself} />
     <% end %>
 </ul>
