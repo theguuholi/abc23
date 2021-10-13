@@ -1,13 +1,15 @@
 <ul id="list-stores">
     <%= for store <- @stores do %>
     <li id={"store-" <> store.id}>
-        <a href="#">
+        <%= live_redirect to: Routes.picking_path(@socket, :index, id: store.id),
+                       id: "select-store-#{store.id}"
+        do %>
             <%= store.name %> - <%= store.description %>
-        </a>
+        <% end %>
     </li>
     <% end %>
 </ul>
 
 <div id="pickings-in-the-map">
-    <div id="map" phx-hook="PickingsMap" data-store-picking-list={Jason.encode!(@stores)}></div>
+    <div id="map" phx-hook="PickingsMap" data-store-picking-list={Jason.encode!(@stores)}, data-selected-store={Jason.encode!(@selected_store)}></div>
 </div>
